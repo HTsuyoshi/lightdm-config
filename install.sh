@@ -18,4 +18,4 @@ echo 'Copying user icon...'
 $SUDO cp icon /var/lib/AccountsService/icons/$USER || exit 1
 
 echo 'Setting user icon...'
-echo 'echo "Icon=/var/lib/AccountsService/icons/$USER" >> /var/lib/AccountsService/users/$USER || exit 1' | $SUDO bash
+$SUDO sed -i "s/Icon=.*/Icon=\/var\/lib\/AccountsService\/icons\/$USER/" /var/lib/AccountsService/users/$USER || exit 1
