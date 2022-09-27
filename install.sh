@@ -1,7 +1,9 @@
 #!/bin/bash
 
-PKG_MNG='yay'
-SUDO='sudo'
+PKG_MNG=''
+SUDO=''
+[[ -z $PKG_MNG ]] && echo 'Package manager not set exiting...' && exit
+[[ -z $SUDO ]] && echo 'sudo not set exiting...' && exit
 
 echo 'Downloading lightdm and web-greeter...'
 $PKG_MNG -S lightdm web-greeter || exit 1
