@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PKG_MNG='paru'
-SUDO='doas'
+PKG_MNG='yay'
+SUDO='sudo'
 
 echo 'Downloading lightdm and web-greeter...'
 $PKG_MNG -S lightdm web-greeter || exit 1
@@ -16,4 +16,4 @@ echo 'Copying user icon...'
 $SUDO cp icon /var/lib/AccountsService/icons/$USER || exit 1
 
 echo 'Setting user icon...'
-$SUDO echo "Icon=/var/lib/AccountsService/icons/$USER" >> /var/lib/AccountsService/users/$USER || exit 1
+echo 'echo "Icon=/var/lib/AccountsService/icons/$USER" >> /var/lib/AccountsService/users/$USER || exit 1' | $SUDO bash
