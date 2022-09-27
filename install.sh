@@ -12,7 +12,7 @@ echo 'Enabling lightdm.service...'
 $SUDO systemctl enable lightdm.service || exit 1
 
 echo 'Setting greeter-session...'
-$SUDO sed -i '102s/# greeter-session/greeter-session=web-greeter/' /etc/lightdm/lightdm.conf || exit 1
+$SUDO sed -i '102s/.*/greeter-session=web-greeter/' /etc/lightdm/lightdm.conf || exit 1
 
 echo 'Copying user icon...'
 $SUDO cp icon /var/lib/AccountsService/icons/$USER || exit 1
